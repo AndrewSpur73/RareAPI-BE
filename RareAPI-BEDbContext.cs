@@ -23,6 +23,7 @@ namespace RareAPI_BE
             modelBuilder.Entity<Comment>().HasData(CommentData.Comments);
             modelBuilder.Entity<PostTag>().HasData(PostTagData.PostTags);
             modelBuilder.Entity<User>().HasData(UserData.Users);
+            modelBuilder.Entity<Tag>().HasData(TagData.Tags);
             modelBuilder.Entity<Post>().HasData(PostData.Posts);
 
             //relationship between Post and Comments, When a Post is delted any related Comments will be deleted as well. 
@@ -38,7 +39,13 @@ namespace RareAPI_BE
                 .WithOne(pt => pt.Post)
                 .HasForeignKey(pt => pt.PostId)
                 .OnDelete(DeleteBehavior.Cascade);
-                
+
+            modelBuilder.Entity<PostTag>()
+                  .HasOne(pt => pt.Tag)
+                  .WithMany(t => t.PostTags)
+                  .HasForeignKey(pt => pt.TagId)
+                  .OnDelete(DeleteBehavior.Restrict);
+
 
 
 
