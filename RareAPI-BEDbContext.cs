@@ -19,9 +19,11 @@ namespace RareAPI_BE
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+
             //Seed data for the application
             modelBuilder.Entity<Comment>().HasData(CommentData.Comments);
             modelBuilder.Entity<PostTag>().HasData(PostTagData.PostTags);
+            modelBuilder.Entity<Tag>().HasData(TagData.Tags);
             modelBuilder.Entity<User>().HasData(UserData.Users);
             modelBuilder.Entity<Tag>().HasData(TagData.Tags);
             modelBuilder.Entity<Post>().HasData(PostData.Posts);
