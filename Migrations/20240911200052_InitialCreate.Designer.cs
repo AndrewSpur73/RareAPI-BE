@@ -11,7 +11,7 @@ using RareAPI_BE;
 namespace RareAPI_BE.Migrations
 {
     [DbContext(typeof(RareAPI_BEDbContext))]
-    [Migration("20240911012116_InitialCreate")]
+    [Migration("20240911200052_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

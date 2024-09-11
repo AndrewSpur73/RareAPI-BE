@@ -25,7 +25,6 @@ namespace RareAPI_BE
             modelBuilder.Entity<PostTag>().HasData(PostTagData.PostTags);
             modelBuilder.Entity<Tag>().HasData(TagData.Tags);
             modelBuilder.Entity<User>().HasData(UserData.Users);
-            modelBuilder.Entity<Tag>().HasData(TagData.Tags);
             modelBuilder.Entity<Post>().HasData(PostData.Posts);
 
             //relationship between Post and Comments, When a Post is delted any related Comments will be deleted as well. 
