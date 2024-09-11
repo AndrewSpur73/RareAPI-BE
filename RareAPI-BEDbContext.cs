@@ -24,7 +24,6 @@ namespace RareAPI_BE
             modelBuilder.Entity<Comment>().HasData(CommentData.Comments);
             modelBuilder.Entity<Tag>().HasData(TagData.Tags);
             modelBuilder.Entity<PostTag>().HasData(PostTagData.PostTags);
-            modelBuilder.Entity<Tag>().HasData(TagData.Tags);
             modelBuilder.Entity<User>().HasData(UserData.Users);
             modelBuilder.Entity<Post>().HasData(PostData.Posts);
 
