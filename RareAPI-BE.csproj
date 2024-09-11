@@ -1,10 +1,11 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <RootNamespace>RareAPI_BE</RootNamespace>
+    <UserSecretsId>46b3b7cd-d37e-40c9-8048-368eadd94bda</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
