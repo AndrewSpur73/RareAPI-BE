@@ -10,10 +10,21 @@ namespace RareAPI_BE
     {
         public static void Main(string[] args)
         {
+
             var builder = WebApplication.CreateBuilder(args);
 
-            // Add services to the container.
-            builder.Services.AddAuthorization();
+            builder.Services.AddCors(options =>
+            {
+                options.AddDefaultPolicy(
+                    policy =>
+                    {
+                        policy.WithOrigins("http://localhost:3000")
+                                            .AllowAnyHeader()
+                                            .AllowAnyMethod()
+                                            .AllowCredentials();
+                    });
+            });
+
 
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
@@ -35,6 +46,8 @@ namespace RareAPI_BE
 
             var app = builder.Build();
 
+            app.UseCors();
+
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
             {
@@ -47,6 +60,8 @@ namespace RareAPI_BE
             app.UseAuthorization();
             PostAPI.Map(app);
             CommentAPI.Map(app);
+            UserAPI.Map(app);
+
             app.Run();
         }
     }

@@ -8,8 +8,8 @@ namespace RareAPI_BE
     {
         public DbSet<Comment> Comments { get; set; }
         public DbSet<Post> Posts { get; set; }
-        public DbSet<PostTag> PostTags { get; set; }
         public DbSet<Tag> Tags { get; set; }
+        public DbSet<PostTag> PostTags { get; set; }
         public DbSet<User> Users { get; set; }
 
         public RareAPI_BEDbContext(DbContextOptions<RareAPI_BEDbContext> context): base(context)
@@ -22,8 +22,8 @@ namespace RareAPI_BE
 
             //Seed data for the application
             modelBuilder.Entity<Comment>().HasData(CommentData.Comments);
-            modelBuilder.Entity<PostTag>().HasData(PostTagData.PostTags);
             modelBuilder.Entity<Tag>().HasData(TagData.Tags);
+            modelBuilder.Entity<PostTag>().HasData(PostTagData.PostTags);
             modelBuilder.Entity<User>().HasData(UserData.Users);
             modelBuilder.Entity<Post>().HasData(PostData.Posts);
 
