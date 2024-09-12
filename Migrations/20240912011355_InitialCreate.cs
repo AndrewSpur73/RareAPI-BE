@@ -32,7 +32,7 @@ namespace RareAPI_BE.Migrations
                     Bio = table.Column<string>(type: "text", nullable: true),
                     Email = table.Column<string>(type: "text", nullable: true),
                     ImageUrl = table.Column<string>(type: "text", nullable: true),
-                    FirebaseId = table.Column<string>(type: "text", nullable: true)
+                    Uid = table.Column<string>(type: "text", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -129,14 +129,14 @@ namespace RareAPI_BE.Migrations
 
             migrationBuilder.InsertData(
                 table: "Users",
-                columns: new[] { "Id", "Bio", "Email", "FirebaseId", "ImageUrl", "UserName" },
+                columns: new[] { "Id", "Bio", "Email", "ImageUrl", "Uid", "UserName" },
                 values: new object[,]
                 {
-                    { 1, "The Pilsbury doughboy ain't got shit on me", "DoughMon@gmail.com", "", "https://images.playground.com/7344181b53c14f018042ea2a7ec1cc3e.jpeg", "JonDough" },
-                    { 2, "If bitches get stitches, what do good boys get?", "Mrthincrisp@gmail.com", "xkZcuwDM5hXjHreMiKgs9AHVlcX2", "", "Mrthincrisp" },
-                    { 3, "Music is my life", "ross.morgan933@gmail.com", "foSJhCcjadNP0TsmghEFzOt2GgX2", "", "RossMorgan" },
-                    { 4, "Traveler, blogger, coffee lover", "andrewspurlock@rocketmail.com", "EuuoQaFhV2Wu5hjPA3DrS8ASRoC3", "", "AndrewSpurlock" },
-                    { 5, "Tech geek with a passion for AI", "ChrisTechy@gmail.com", "", "https://www.southernliving.com/thmb/cxeGxYshY26hzmi5TToGS3oTraQ=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/Lowes-Exterior-2000-9577c2caf665407083589a6cb2747301.jpg", "ChrisLowe" }
+                    { 1, "The Pilsbury doughboy ain't got shit on me", "DoughMon@gmail.com", "https://images.playground.com/7344181b53c14f018042ea2a7ec1cc3e.jpeg", "", "JonDough" },
+                    { 2, "If bitches get stitches, what do good boys get?", "Mrthincrisp@gmail.com", "", "xkZcuwDM5hXjHreMiKgs9AHVlcX2", "Mrthincrisp" },
+                    { 3, "Music is my life", "ross.morgan933@gmail.com", "", "foSJhCcjadNP0TsmghEFzOt2GgX2", "RossMorgan" },
+                    { 4, "Traveler, blogger, coffee lover", "aspurlock@coding.com", "", "Firebase_Key", "AndrewSpurlock" },
+                    { 5, "Tech geek with a passion for AI", "ChrisTechy@gmail.com", "https://www.southernliving.com/thmb/cxeGxYshY26hzmi5TToGS3oTraQ=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/Lowes-Exterior-2000-9577c2caf665407083589a6cb2747301.jpg", "", "ChrisLowe" }
                 });
 
             migrationBuilder.InsertData(
