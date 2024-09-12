@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using Microsoft.EntityFrameworkCore;
 using RareAPI_BE.Models;
-
+using RareAPI_BE.DTOs;
 namespace RareAPI_BE.API
 {
     public class PostAPI
@@ -25,10 +25,25 @@ namespace RareAPI_BE.API
 
                 if (postId == null)
                 {
-                    return Results.NotFound("No Artwork Found.");
+                    return Results.NotFound("No Post Found.");
                 }
 
                 return Results.Ok(postId);
+            });
+
+            // Create a Post
+            app.MapPost("/post", (RareAPI_BEDbContext db, CreatePostDTO PostDTO, IMapper mapper) => 
+            {
+                var newPost = mapper.Map<Post>(PostDTO);
+                newPost.PostTags = PostDTO.TagIds.Select(tagId => new PostTag
+                {
+                    TagId = tagId
+                }).ToList();
+
+                db.Posts.Add(newPost);
+                db.SaveChanges();
+
+                return Results.Created($"/post/{newPost.Id}", newPost);
             });
 
         }
