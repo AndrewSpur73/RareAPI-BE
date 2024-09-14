@@ -1,7 +1,6 @@
 ﻿using RareAPI_BE.Models;
 using Microsoft.EntityFrameworkCore;
 using RareAPI_BE.DTOs;
-using RareAPI_BE.Mapper;
 using AutoMapper;
 
 namespace RareAPI_BE.API
@@ -60,7 +59,7 @@ namespace RareAPI_BE.API
             });
 
             //Edit A Comment
-            app.MapPatch("/comments/{id}", (RareAPI_BEDbContext db, int id, EditCommentDTO editComment, IMapper mapper) =>
+            app.MapPatch("/comments/{id}", (RareAPI_BEDbContext db, int id, EditCommentDTO editCommentDTO, IMapper mapper) =>
             {
 
                 var commentToEdit = db.Comments.FirstOrDefault(c => c.Id == id);
@@ -70,7 +69,7 @@ namespace RareAPI_BE.API
                     return Results.NotFound("Comment not found");
                 }
 
-                mapper.Map(editComment, commentToEdit);
+                mapper.Map(editCommentDTO, commentToEdit);
 
                 try
                 {

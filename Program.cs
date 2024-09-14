@@ -57,8 +57,12 @@ namespace RareAPI_BE
 
             app.UseHttpsRedirection();
 
+<<<<<<< Updated upstream
             PostAPI.Map(app);
 
+=======
+            TagAPI.Map(app);
+>>>>>>> Stashed changes
             CommentAPI.Map(app);
             UserAPI.Map(app);
 
