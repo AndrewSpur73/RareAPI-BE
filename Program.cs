@@ -57,8 +57,9 @@ namespace RareAPI_BE
 
             app.UseHttpsRedirection();
 
-            PostAPI.Map(app);
 
+            PostAPI.Map(app);
+            TagAPI.Map(app);
             CommentAPI.Map(app);
             UserAPI.Map(app);
 
