@@ -18,6 +18,20 @@ namespace RareAPI_BE.API
 
             });
 
+            //Get a single Tag
+            app.MapGet("/tags/{id}", (RareAPI_BEDbContext db, int id) =>
+            {
+
+                var tag = db.Tags.FirstOrDefault(t => t.Id == id);
+                if (tag == null)
+                {
+                    return Results.NotFound();
+                }
+
+                return Results.Ok(tag);
+
+            });
+
             //Create a Tag
             app.MapPost("/tags", (RareAPI_BEDbContext db, IMapper mapper, CreateTagDTO newTagDTO) =>
             {
