@@ -11,11 +11,7 @@ using RareAPI_BE;
 namespace RareAPI_BE.Migrations
 {
     [DbContext(typeof(RareAPI_BEDbContext))]
-<<<<<<<< HEAD:Migrations/20240911234840_InitialCreate.Designer.cs
-    [Migration("20240911234840_InitialCreate")]
-========
-    [Migration("20240912011355_InitialCreate")]
->>>>>>>> main:Migrations/20240912011355_InitialCreate.Designer.cs
+    [Migration("20240914143227_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
