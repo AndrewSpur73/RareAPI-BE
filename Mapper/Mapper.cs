@@ -13,15 +13,14 @@ namespace RareAPI_BE.Mapper
             CreateMap<Post, CreatePostDTO>()
                 .ForMember(dest => dest.TagIds, opt => opt.MapFrom(src => src.PostTags.Select(sg => sg.Tag)))
                 .ReverseMap();
+
             //Update data DTOs
             CreateMap<Comment, EditCommentDTO>().ReverseMap();
-<<<<<<< Updated upstream
             CreateMap<Post, UpdatePostDTO>()
                 .ForMember(dest => dest.EditTags, opt => opt.MapFrom(src => src.PostTags.Select(sg => sg.Tag)))
                 .ReverseMap();
-=======
             CreateMap<Tag, EditTagDTO>().ReverseMap();
->>>>>>> Stashed changes
+
 
             //Get data DTOs
             
