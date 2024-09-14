@@ -9,6 +9,7 @@ namespace RareAPI_BE.Mapper
         public MapperProfile() 
         {
             //Create data DTOs
+            CreateMap<Tag, CreateTagDTO>().ReverseMap();
             CreateMap<Comment, CreateCommentDTO>().ReverseMap();
             CreateMap<Post, CreatePostDTO>()
                 .ForMember(dest => dest.TagIds, opt => opt.MapFrom(src => src.PostTags.Select(sg => sg.Tag)))
@@ -20,6 +21,7 @@ namespace RareAPI_BE.Mapper
                 .ForMember(dest => dest.EditTags, opt => opt.MapFrom(src => src.PostTags.Select(sg => sg.Tag)))
                 .ReverseMap();
             CreateMap<Tag, EditTagDTO>().ReverseMap();
+            
 
 
             //Get data DTOs
