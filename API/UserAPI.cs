@@ -9,9 +9,9 @@ namespace RareAPI_BE.API
         public static void Map(WebApplication app)
         {
             //LOGIN
-            app.MapGet("/checkuser/{firebaseId}", (RareAPI_BEDbContext db, string firebaseId) =>
+            app.MapGet("/checkuser/{uid}", (RareAPI_BEDbContext db, string uid) =>
             {
-                var authUser = db.Users.Where(u => u.FirebaseId == firebaseId).FirstOrDefault();
+                var authUser = db.Users.Where(u => u.Uid == uid).FirstOrDefault();
                 if (authUser == null)
                 {
                     return Results.StatusCode(204);
@@ -42,6 +42,20 @@ namespace RareAPI_BE.API
                 {
                     return Results.NotFound();
                 }
+                return Results.Ok(user);
+            });
+
+            //Get User Details
+            app.MapGet("/users/details/{uid}", (RareAPI_BEDbContext db, string uid) =>
+            {
+
+                User user = db.Users.SingleOrDefault(u => u.Uid == uid);
+
+                if (user == null)
+                {
+                    return Results.NotFound();
+                }
+
                 return Results.Ok(user);
             });
         }
