@@ -17,7 +17,7 @@ namespace RareAPI_BE.Mapper
             //Update data DTOs
             CreateMap<Comment, EditCommentDTO>().ReverseMap();
             CreateMap<Post, UpdatePostDTO>()
-                .ForMember(dest => dest.EditTags, opt => opt.MapFrom(src => src.PostTags.Select(sg => sg.Tag)))
+                .ForMember(dest => dest.TagId, opt => opt.MapFrom(src => src.PostTags.Select(sg => sg.Tag)))
                 .ReverseMap();
             CreateMap<Tag, EditTagDTO>().ReverseMap();
 

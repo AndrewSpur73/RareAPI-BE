@@ -66,7 +66,7 @@ namespace RareAPI_BE.API
 
                 mapper.Map(postDTO, postToUpdate);
                 var currentTags = postToUpdate.PostTags.ToList();
-                var incomingTags = postDTO.EditTags.Select(t => t.Id).ToList();
+                var incomingTags = postDTO.TagId?.Select(t => t.Id).ToList() ?? new List<int>();
                 foreach (int tagId in incomingTags)
                 {
                     if (!currentTags.Any(t => t.TagId == tagId))
