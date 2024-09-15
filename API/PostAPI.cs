@@ -26,6 +26,9 @@ namespace RareAPI_BE.API
             app.MapGet("/post/{id}", (RareAPI_BEDbContext db, int id) =>
             {
                 var postId = db.Posts
+                .Include(p => p.User)
+                .Include(p => p.Comments)
+                .ThenInclude(c => c.User)
                 .Include(a => a.PostTags)
                 .ThenInclude(t => t.Tag)
                 .FirstOrDefault(a => a.Id == id);
