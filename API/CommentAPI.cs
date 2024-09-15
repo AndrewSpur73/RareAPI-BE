@@ -47,7 +47,7 @@ namespace RareAPI_BE.API
             //Get all of a Post's comments
             app.MapGet("/comments/posts/{id}", async (RareAPI_BEDbContext db, int id) =>
             {
-                var comments = await db.Comments.Where(c => c.PostId == id).ToListAsync();
+                var comments = await db.Comments.Where(c => c.PostId == id).Include(c =>c.User).ToListAsync();
 
                 if (comments == null)
                 {
