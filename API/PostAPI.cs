@@ -43,10 +43,10 @@ namespace RareAPI_BE.API
             });
 
             // Create a Post
-            app.MapPost("/post", (RareAPI_BEDbContext db, CreatePostDTO PostDTO, IMapper mapper) => 
+            app.MapPost("/post", (RareAPI_BEDbContext db, CreatePostDTO postDTO, IMapper mapper) => 
             {
-                var newPost = mapper.Map<Post>(PostDTO);
-                newPost.PostTags = PostDTO.TagIds.Select(tagId => new PostTag
+                var newPost = mapper.Map<Post>(postDTO);
+                newPost.PostTags = postDTO.TagIds?.Select(tagId => new PostTag
                 {
                     TagId = tagId
                 }).ToList();
@@ -69,7 +69,7 @@ namespace RareAPI_BE.API
 
                 mapper.Map(postDTO, postToUpdate);
                 var currentTags = postToUpdate.PostTags.ToList();
-                var incomingTags = postDTO.TagId?.Select(t => t.Id).ToList() ?? new List<int>();
+                var incomingTags = postDTO.TagIds?.ToList() ?? new List<int>();
                 foreach (int tagId in incomingTags)
                 {
                     if (!currentTags.Any(t => t.TagId == tagId))

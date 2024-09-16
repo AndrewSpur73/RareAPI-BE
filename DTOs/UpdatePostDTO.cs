@@ -8,6 +8,6 @@ namespace RareAPI_BE.DTOs
         public string? Title { get; set; }
         public string? Content { get; set; }
         public string? ImageUrl { get; set; }
-        public List<EditTagDTO>? TagId { get; set; }
+        public List<int>? TagIds { get; set; }
     }
 }
