@@ -1,4 +1,6 @@
-﻿using RareAPI_BE.Models;
+﻿using AutoMapper;
+using Microsoft.EntityFrameworkCore;
+using RareAPI_BE.Models;
 
 namespace RareAPI_BE.API
 
