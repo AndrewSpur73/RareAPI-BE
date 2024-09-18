@@ -117,6 +117,25 @@ namespace RareAPI_BE.API
                 return Results.Ok("Post deleted");
             });
 
+            // Filter Post by tags
+            app.MapGet("post/tags/{id}", (RareAPI_BEDbContext db, int id) =>
+            {
+
+                var postTagTable = db.PostTags.Where(pt => pt.TagId == id).ToList();
+
+                var postIds = postTagTable.Select(pt => pt.PostId).ToList();
+
+                var postsToShow = db.Posts
+                .Include(a => a.PostTags)
+                .ThenInclude(t => t.Tag)
+                .Where(p => postIds.Contains(p.Id)).ToList();
+
+
+                return Results.Ok(postsToShow);
+
+
+            });
+
         }
     }
 }
