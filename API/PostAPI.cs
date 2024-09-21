@@ -132,6 +132,22 @@ namespace RareAPI_BE.API
 
 
                 return Results.Ok(postsToShow);
+            });
+
+            // Filter Post by Users
+            app.MapGet("post/user/{id}", (RareAPI_BEDbContext db, int id) =>
+            {
+
+                var userPosts = db.Posts.Where(p => p.UserId == id).ToList();
+
+                var postIds = userPosts.Select(p => p.Id).ToList();
+
+                var postsToShow = db.Posts
+                .Include(a => a.PostTags)
+                .ThenInclude(t => t.Tag)
+                .Where(p => postIds.Contains(p.Id)).ToList();
+
+                return Results.Ok(postsToShow);
 
 
             });
