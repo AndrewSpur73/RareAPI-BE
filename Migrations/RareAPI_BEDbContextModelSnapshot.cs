@@ -108,7 +108,7 @@ namespace RareAPI_BE.Migrations
                         new
                         {
                             Id = 1,
-                            Content = "A deep dive into upcoming technology trends.",
+                            Content = "Tech trends are rapidly shaping the future, with advancements in artificial intelligence (AI), blockchain, and quantum computing leading the way. AI continues to transform industries through automation, machine learning, and natural language processing, improving everything from customer service to medical diagnostics. Blockchain is disrupting finance and cybersecurity with decentralized systems that offer transparency and security, while quantum computing promises to revolutionize problem-solving in fields like cryptography and material science. The rise of 5G is also enabling faster, more connected networks, powering innovations like the Internet of Things (IoT) and smart cities. Additionally, advancements in virtual and augmented reality (VR/AR) are redefining how we experience entertainment, work, and education, creating immersive digital environments that are more integrated into daily life. These trends collectively push the boundaries of what's possible, signaling a tech-driven future with limitless potential.",
                             ImageUrl = "https://thehill.com/wp-content/uploads/sites/2/2018/05/robot_051018gn.jpg?w=960&h=540&crop=1",
                             Title = "Tech Trends 2024",
                             UserId = 1
@@ -116,15 +116,15 @@ namespace RareAPI_BE.Migrations
                         new
                         {
                             Id = 2,
-                            Content = "Top 10 indie albums you must listen to in 2024.",
-                            ImageUrl = "https://preview.redd.it/whats-the-weirdest-album-cover-youve-ever-seen-v0-l2sre3xg799b1.jpeg?width=1242&format=pjpg&auto=webp&s=d7562fd2e4fb7cb3ce5c850f64754b373f6be07c",
+                            Content = "The Northern Pines’ latest indie release, Wanderlust Echoes, is a refreshing blend of ethereal melodies and introspective lyrics that feels like wandering into a dream. With fragile yet resilient vocals from lead singer Jess Meyers, the album’s emotional rawness draws you in from the first track, \"Clouded Horizons.\" Songs like \"Midnight Runaway\" and \"Saltwater Skies\" showcase the band’s layered instrumentation and intricate attention to detail, weaving themes of self-discovery and escapism into each note. The standout track, \"Fading Trails,\" offers an addictive bassline and atmospheric synths, while \"Silver Shoreline\" provides a quieter, acoustic-driven moment of reflection. Though Wanderlust Echoes doesn’t stray far from the band’s earlier work, it feels like a natural progression, offering a beautifully human experience perfect for introspective moments or long drives. This is indie music at its finest.",
+                            ImageUrl = "https://qph.cf2.quoracdn.net/main-qimg-7363ad9a5fb42cc0d1b1b35dd92135ac",
                             Title = "Best Indie Albums",
                             UserId = 2
                         },
                         new
                         {
                             Id = 3,
-                            Content = "A guide to budget-friendly travels across Europe.",
+                            Content = "Exploring Europe is a journey through diverse cultures, rich history, and breathtaking landscapes that can feel like stepping into a living museum. From the bustling streets of Paris to the quiet canals of Venice, every city tells its own story through its architecture, cuisine, and local traditions. Whether you're hiking the Swiss Alps, relaxing on the beaches of Greece, or wandering through medieval castles in Germany, Europe offers something for every type of traveler. The continent’s seamless transportation system makes it easy to hop between countries, allowing you to experience the vibrant nightlife in Barcelona one day and the historical charm of Prague the next. Each destination offers its own unique flavor, yet there's a shared sense of history and connection that ties it all together, making Europe a dream destination for anyone with a thirst for adventure and discovery.",
                             ImageUrl = "https://i.cbc.ca/1.6729582.1674911696!/cumulusImage/httpImage/image.jpg_gen/derivatives/16x9_780/kitchener-homeless-encampment-victoria-and-weber-streets.jpg",
                             Title = "Exploring Europe",
                             UserId = 3
@@ -132,7 +132,7 @@ namespace RareAPI_BE.Migrations
                         new
                         {
                             Id = 4,
-                            Content = "Best new food product!",
+                            Content = "Gourmet Delights is an innovative culinary creation that takes indulgence to a whole new level with its unique blend of exotic ingredients and unexpected flavors. Each dish in the Gourmet Delights line is meticulously crafted by expert chefs, combining rare spices from remote corners of the globe with organic, locally-sourced produce. The result is a menu that tantalizes the taste buds with surprising combinations like truffle-infused dragon fruit, caramelized cactus blossoms, and saffron-dusted seaweed crisps. Perfect for food enthusiasts seeking a luxurious dining experience, Gourmet Delights promises a flavor journey that pushes the boundaries of traditional cuisine, offering a mix of savory, sweet, and umami that’s truly unforgettable.",
                             ImageUrl = "https://gaianism.org/wp-content/uploads/2022/02/soylent-green-new-packaging1.png",
                             Title = "Gourmet Delights",
                             UserId = 4
